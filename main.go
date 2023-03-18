@@ -51,7 +51,12 @@ func main() {
 				}
 			case *parsers.Industry:
 				for _, item := range r.Items {
-					itemsMap[item.Name] += item.Quantity
+					if item.Quantity == 1 && item.BPCRuns > 1 {
+						itemsMap[item.Name] += item.BPCRuns
+					}
+					else {
+						itemsMap[item.Name] += item.Quantity
+					}
 				}
 			case *parsers.Listing:
 				for _, item := range r.Items {
