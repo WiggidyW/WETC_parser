@@ -53,8 +53,7 @@ func main() {
 				for _, item := range r.Items {
 					if item.Quantity == 1 && item.BPCRuns > 1 {
 						itemsMap[item.Name] += item.BPCRuns
-					}
-					else {
+					} else {
 						itemsMap[item.Name] += item.Quantity
 					}
 				}
